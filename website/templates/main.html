@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+  RichardHawkins.org (My Website)
+  Copyright (C) 2013 Richard Hawkins
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as
+  published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %} - RichardHawkins.org{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/screen.css') }}" rel="stylesheet">
+    {% endblock %}
+  </head>
+
+  <body>
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      <!-- Fixed navbar -->
+      <div class="navbar navbar-fixed-top">
+        <div class="container">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url_for('page_root') }}">RichardHawkins.org</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="{{ url_for('page_credits') }}">Credits</a></li>
+            </ul>
+            <form class="navbar-form form-inline pull-right">
+              <a href="https://twitter.com/hurricanerix" target="_blank"><img src="{{ url_for('static', filename='images/twitter-logo-square.png') }}"></a>
+              <a href="https://github.com/hurricanerix" target="_blank"><img src="{{ url_for('static', filename='images/github-logo-square.png') }}"></a>
+              <a href="http://www.linkedin.com/in/richardhawkins" target="_blank"><img src="{{ url_for('static', filename='images/linkedin-logo-square.png') }}"></a>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+      <!-- Begin page content -->
+      <div class="container">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <div class="row text-muted credit">
+          <div class="col-lg-3"><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a></div>
+          <div class="col-lg-9">This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" target="_blank">Creative Commons Attribution 3.0 Unported License</a>.</div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% block script %}
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery-1.10.2.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    {% endblock %}
+
+  </body>
+</html>
