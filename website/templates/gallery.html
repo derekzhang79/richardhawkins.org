@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Gallery{{ super() }}{% endblock %}
+{% block nav_gallery_class %}active{% endblock %}
+{% block content %}
+<ul>
+{% for gallery in galleries %}
+  <li>
+    <a href="{{ gallery.href }}">
+      <img src="{{ gallery.thumbnail }}"><br>
+      {{ gallery.name }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}

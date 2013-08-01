@@ -1,4 +1,5 @@
 .DS_Store
 *.swp
 *.pyc
-website/build*
+website/build/*
+website/static/images/gallery/*

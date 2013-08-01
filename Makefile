@@ -13,7 +13,6 @@
 #
 #You should have received a copy of the GNU Affero General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-SHELL=/bin/zsh -c
 
 default:
 	@echo "Starting dev server."
@@ -22,7 +21,6 @@ default:
 
 deploy:
 	python freeze.py
-    # install https://github.com/gholt/swiftly
-    # Add to .zshrc:
-    #   swiftly-rh='swiftly --auth-url="https://identity.api.rackspacecloud.com/v2.0/" --auth-user="<username>" --auth-key="<apikey>" --region="<region>" "$@"'
-	$(SHELL) 'swiftly-rh put richardhawkins.org -i website/build/'
+    # TODO: Add script to scrub unwanted files from build dir (.DS_Store).
+    # TODO: Script to purge removed files from Cloud Files.
+	swiftly-rh put richardhawkins.org -i website/build/
