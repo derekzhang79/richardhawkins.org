@@ -3,14 +3,14 @@
 {% block nav_gallery_class %}active{% endblock %}
 {% block content %}
 <h1>{{ gallery_name }}</h1>
-<ul>
+<div class="row">
 {% for photo in photos %}
-  <li>
+  <div class="col-3 text-center">
     <a href="{{ photo.href }}">
-      <img src="{{ photo.thumbnail }}"><br>
-      {{ photo.name }}
+      <img class="img-thumbnail" src="{{ photo.thumbnail }}"><br>
+      <small>{{ photo.name }}</small>
     </a>
-  </li>
+  </div>
 {% endfor %}
-</ul>
+</div>
 {% endblock %}

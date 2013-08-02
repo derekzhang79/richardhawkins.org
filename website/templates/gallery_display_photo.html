@@ -4,5 +4,7 @@
 {% block content %}
 <h1>{{ gallery_name }}</h1>
 <h2>{{ photo_name }}</h2>
-<img src="{{ url_for('static', filename=photo_file) }}">
+<div class="col-12 text-center">
+  <img class="img-responsive" src="{{ url_for('static', filename=photo_file) }}">
+</div>
 {% endblock %}

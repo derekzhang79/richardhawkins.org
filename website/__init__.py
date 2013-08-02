@@ -98,7 +98,9 @@ def get_photos(gallery_id):
     for filename in filenames:
         if filename.lower().startswith('d_'):
             photo_id = id_to_name(filename, keep_hyphens=True)
-            thumbnail = 'images/gallery-photo-default-thumbnail.jpg'
+            thumbnail = 'images/gallery/{0}/d_{1}.jpg'.format(
+                gallery_id, photo_id)
+
             if 't_{0}.jpg'.format(photo_id) in filenames:
                 thumbnail = 'images/gallery/{0}/t_{1}.jpg'.format(
                     gallery_id, photo_id)
